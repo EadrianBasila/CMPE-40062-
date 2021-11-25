@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jake's Coffee Shop</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript">
+        function showHome(){
+            var divs = document.getElementById("divHome");
+            var only = "divHome";
+            if (divs.style.display === "none") {
+                    divs.style.display = "block";
+                } 
+                hideOthers(only);
+        }
+        function showMenu(){
+            var divs = document.getElementById("divMenu");
+            var only = "divMenu";         
+            if (divs.style.display === "none") {
+                    divs.style.display = "block";
+                } 
+                hideOthers(only);
+        }
+        function showMusic(){
+            var divs = document.getElementById("divMusic");
+            var only = "divMusic";   
+            if (divs.style.display === "none") {
+                    divs.style.display = "block";
+                } 
+                hideOthers(only);
+        }
+        function showJobs(){
+            var divs = document.getElementById("divJobs");
+            var only = "divJobs";      
+            if (divs.style.display === "none") {
+                    divs.style.display = "block";
+                } 
+                hideOthers(only);
+        }
+        function hideOthers(only){
+            const arrDivs = ["divHome", "divMenu", "divMusic", "divJobs"];
+            style = "none";
+            for(divs in arrDivs){
+                if (arrDivs[divs] != only){
+                    document.getElementById(arrDivs[divs]).style.display = style;
+                }
+            }
+        }
+        </script>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="header">
+                <h1> Jake's Cofee Shop </h1>
+            </div>
+            <div id="navs">
+                <a href="javascript:showHome();">Home</a>
+                <a href="javascript:showMenu();">Menu</a>
+                <a href="javascript:showMusic();">Music</a>
+                <a href="javascript:showJobs();">Jobs</a>
+                
+            </div>
+            <div id="divHome" >
+                <p>Come in and experience...</p>
+                <img id="coffee"  src="/assets/coffee.jpg" alt="coffee" width="200" height="200">
+                <ul>
+                    <li>Specialty Coffee and Tea</li>
+                    <li>Freshly made sandwiches</li>
+                    <li>Bagels, Muffins, and Organic Snacks</li>
+                    <li>Music and Poetry Readings</li>
+                    <li>Open mic nights</li>
+                    <li> ... </li>
+                </ul>
+                <br>
+                <p>23 Pine Road <br> Nottingham, NG1 5YU <br> 0115 9324567</p>
+            </div>
+            <div id="divMenu" style = "display:none">
+                <p><h4><center>Our Finest Menu</center></h4></p>
+                <table style="width:100%">
+                    <tr>
+                      <th>Drinks</th>
+                      <th></th>
+                      <th>Sandwiches</th>
+                      <th></th>
+                      <th>Pastries</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                        <td>Iced Tubig</td>
+                        <td class="price">P 5.00</td>
+                        <td>Kangkong Sndwch</td>
+                        <td class="price">P25.00</td>
+                        <td>Cookieomai</td>
+                        <td class="price">P14.00</td>
+                    </tr>
+                    <tr>
+                        <td>Sago't Alamang</td>
+                        <td class="price">P20.00</td>
+                        <td>Balut Sndwch</td>
+                        <td class="price">P45.00</td>
+                        <td>Kikiawaffle</td>
+                        <td class="price">P16.00</td>
+                    </tr>
+                    <tr>
+                        <td>Iced Chili-oil</td>
+                        <td class="price">P15.00</td>
+                        <td>Tuyo Sndwch</td>
+                        <td class="price">P25.00</td>
+                        <td>Tinapancake</td>
+                        <td class="price">P45.00</td>
+                    </tr>
+                    <tr>
+                        <td>Choco-Calamansi</td>
+                        <td class="price">P24.00</td>
+                        <td>Isaw Sndwch</td>
+                        <td class="price">P25.00</td>
+                        <td>Cake-kwek</td>
+                        <td class="price">P85.00</td>
+                    </tr>
+                    <tr>
+                        <td>Sweet Tuba</td>
+                        <td class="price">P60.00</td>
+                        <td>Turon Sndwch</td>
+                        <td class="price">P65.00</td>
+                        <td>Okra bread</td>
+                        <td class="price">P35.00</td>
+                    </tr>
+                    <tr>
+                        <td>Spicy Taho</td>
+                        <td class="price">P30.00</td>
+                        <td>Leche Flan Sndwch</td>
+                        <td class="price">P95.00</td>
+                        <td>Ube con Betamax</td>
+                        <td class="price">P75.00</td>
+                    </tr>
+                    <tr>
+                        <td>Hot Halo-Halo</td>
+                        <td class="price">P60.00</td>
+                        <td>Maja Sndwch</td>
+                        <td class="price">P35.00</td>
+                        <td>Sapin-sapie</td>
+                        <td class="price">P55.00</td>
+                    </tr>
+                    <tr>
+                        <td>Mais con Gata</td>
+                        <td class="price">P20.00</td>
+                        <td>Biko Sndwch</td>
+                        <td class="price">P35.00</td>
+                        <td>Daing rolls</td>
+                        <td class="price">P45.00</td>
+                    </tr>
+                  </table>
+                  <center><p style="font-size: 13px"> Each product we sell has been exclusively crafted to wake up your taste buds and satisfy your cravings. Enjoy! </p></center>
+            </div>
+            <div id="divMusic" style = "display:none">
+                <p><h4><center>Our Finest Collection</center></h4></p>
+                <table>
+                    <tr>
+                        <td>
+                            <figure>
+                                <figcaption>Track1: Davao Budots</figcaption>
+                                <audio controls style="width: 200px;"> <source src="/assets/budots.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <figcaption>Track2: Lamok Budots</figcaption>
+                                <audio controls style="width: 200px;"> <source src="/assets/lamok.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </figure>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <figure>
+                                <figcaption>Track3: Rastaman Budots</figcaption>
+                                <audio controls style="width: 200px;"> <source src="/assets/rastaman.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <figcaption>Track4: Ako'y Sabog Na</figcaption>
+                                <audio controls style="width: 200px;"> <source src="/assets/sabogna.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                                </audio>
+                            </figure>
+                        </td>
+                    </tr>
+                    
+                </table>
+               
+            </div>
+            <div id="divJobs" style = "display:none">
+                <p><h4><center>Do you want to be a part of our Team?</center></h4></p>
+                <table class="center">
+                    <tr>
+                      <th>Job</th>
+                      <th></th>
+                      <th>Shift</th>
+                      <th></th>
+                      <th>Salary</th>
+                    </tr>
+                    <tr>
+                        <td>Cook</td>
+                        <td></td>
+                        <td>Day</td>
+                        <td></td>
+                        <td>15,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Cook</td>
+                        <td></td>
+                        <td>Night</td>
+                        <td></td>
+                        <td>20,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Waiter</td>
+                        <td></td>
+                        <td>Day</td>
+                        <td></td>
+                        <td>10,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Waiter</td>
+                        <td></td>
+                        <td>Night</td>
+                        <td></td>
+                        <td>12,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Dishwasher</td>
+                        <td></td>
+                        <td>Day</td>
+                        <td></td>
+                        <td>10,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Dishwasher</td>
+                        <td></td>
+                        <td>Night</td>
+                        <td></td>
+                        <td>12,000.00</td>
+                    </tr>
+                  </table>
+                  <center><p style="font-size: 15px"> Send your application to jake@jcoffee.com. See You! </p></center>
+            </div>
+
+            <div id="footer">
+                Copyright &copy; 2011 Jake's Coffee House<br>
+                <a href="mailto:jake@jcoffee.com">jake@jcoffee.com</a>
+            </div>
+        </div>
+    </body>
+
+</html>

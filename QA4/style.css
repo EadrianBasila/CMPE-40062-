@@ -1,0 +1,109 @@
+body {
+    background-color: #ffffcc;
+    color: #330000;
+    font-family: Verdana;
+  }
+
+  #container {
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 480px;
+    width: 750px;
+    border-style: solid;
+    padding: 0px;
+  }
+
+  #header {
+    background-color: #ccaa66;
+    text-align: center;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    height: 80px;
+    margin: 0px;
+  }
+
+  #navs {
+    background-color: #e8d882;
+    position: relative;
+    padding-left: 20px;
+    left: 0px;
+    width: 130px;
+    height: 320px;
+    float: left;
+    white-space: pre-line;
+  }
+
+  #navBar {
+    text-align: left;
+  }
+
+  #divHome {
+    background-color: #f1e8b0;
+    position: relative;
+    width: 580px;
+    height: 300px;
+    padding: 10px;
+    float: right;
+  }
+
+  #divMenu {
+    background-color: #f1e8b0;
+    position: relative;
+    width: 580px;
+    height: 300px;
+    padding: 10px;
+    float: right;
+  }
+
+  #divMusic {
+    background-color: #f1e8b0;
+    position: relative;
+    width: 580px;
+    height: 300px;
+    padding: 10px;
+    float: right;
+  }
+
+  #divJobs {
+    background-color: #f1e8b0;
+    position: relative;
+    width: 580px;
+    height: 300px;
+    padding: 10px;
+    float: right;
+  }
+
+  #coffee {
+    position: absolute;
+    right: 20px;
+  }
+
+  th {
+    text-align: left;
+  }
+  td{
+      font-size: small;
+  }
+
+  .price {
+      font-size: small;
+  }
+  .center{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border-spacing: 5px;
+  }
+
+
+  #footer {
+    background-color: #ccaa66;
+    border-top-style: solid;
+    height: 62px;
+    text-align: center;
+    font-style: italic;
+    width: 750px;
+    margin-top: 320px;
+    padding-top: 10px;
+  }

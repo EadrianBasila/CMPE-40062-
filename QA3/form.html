@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title> Get Pass Form</title>
+    <meta name="description" content="Get Pass Form Activity">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript">
+
+        /* Accurate from region to provinces, cities and barangays are auto-generated */
+        var regionList = new Array(16)
+        regionList["empty"] = ["Select Region"];
+        regionList["NCR"] = ["Capital District", "Eastern Manila District", "Northern Manila District", "Southern Manila District"];
+        regionList["Region I"] = ["Ilocos Norte", "Ilocos Sur", "La Union", "Pangasinan"];
+        regionList["Region II"] = ["Batanes", "Cagayan", "Isabela", "Nueva Vizcaya", "Quirino"];
+        regionList["Region III"] = ["Aurora", "Bataan", "Bulacan", "Nueva Ecija", "Pampanga", "Tarlac", "Zambales"];
+        regionList["Region IV-A"] = ["Batangas", "Cavite", "Laguna", "Quezon", "Rizal"];
+        regionList["Region IV-B"] = ["Mindoro Occidental", "Mindoro Oriental", "Marinduque", "Romblon", "Palawan"];
+        regionList["Region V"] = ["Albay", "Camarines Sur", "Camarines Norte", "Sorsogon", "Catanduanes", "Masbate"];
+        regionList["Region VI"] = ["Aklan", "Antique", "Negros Occidental", "Capiz", "Guimaras", "Iloilo"];
+        regionList["Region VII"] = ["Bohol", "Cebu", "Negros Oriental", "Siquijor"];
+        regionList["Region VIII"] = ["Biliran", "Eastern Samar", "Leyte", "Northern Samar", "Samar", "Southern Leyte"];
+        regionList["Region IX"] = ["Zamboanga del Norte", "Zamboanga Sibugay", "Zamboanga del Sur"];
+        regionList["Region X"] = ["Bukidnon", "Camiguin", "Lanao del Norte", "Misamis Occidental", "Misamis Oriental"];
+        regionList["Region XI"] = ["Davao del Norte", "Davao del Sur", "Davao Oriental", "Compostela Valley"];
+        regionList["Region XII"] = ["South Cotabato", "Cotabato", "Sultan Kudarat", "Sarangani"];
+        regionList["Region XIII"] = ["Agusan del Norte", "Agusan del Sur", "Surigao del Norte", "Surigao del Sur", "Dinagat Islands"];
+        regionList["CAR"] = ["Abra", "Apayao", "Benguet", "Ifugao", "Kalinga", "Mountain Province"];
+        regionList["BARMM"] = ["Basilan", "Lanao del Sur", "Maguindanao", "Sulu", "Tawi-tawi"];
+        
+        /* Functions were designed to work on Microsoft Edge Browser*/ 
+        function regionSelect(selectObj) {
+            var idx = selectObj.selectedIndex;
+            var which = selectObj.options[idx].value;
+            rList = regionList[which];
+            var rSelect = document.getElementById("uProvince")
+            var len = rSelect.options.length;
+            while (rSelect.options.length > 0) {
+                rSelect.remove(0);
+            }
+            var newOption;
+            for (var i = 0; i < rList.length; i++) {
+                newOption = document.createElement("option");
+                newOption.value = rList[i];
+                newOption.text = rList[i];
+
+                try {
+                    rSelect.add(newOption);
+                }
+                catch (e) {
+                    rSelect.appendChild(newOption);
+                }
+            }
+        }
+        
+  
+        /* Cities Option generation from selected Province*/
+        function provinceSelect(selectObj) {
+            var provSelected = document.getElementById("uProvince");
+            var provSelectedText = provSelected.options[provSelected.selectedIndex].text;
+
+            var cSelect = document.getElementById("uCity")
+            var len = cSelect.options.length;
+            while (cSelect.options.length > 0) {
+                cSelect.remove(0);
+            }
+            console.log(provSelectedText)
+            var newOption;
+            for (var i = 1; i < 6; i++) {
+                newOption = document.createElement("option");
+                newOption.value = provSelectedText + " City " + i;
+                newOption.text = provSelectedText + " City " + i;
+                console.log(newOption.text)
+                try {
+                    cSelect.add(newOption);
+                }
+                catch (e) {
+                    cSelect.appendChild(newOption);
+                }
+            }
+        }
+        /* Barangay Option generation from selected City*/
+        function citySelect(selectObj) {
+            var citySelected = document.getElementById("uCity");
+            var citySelectedText = citySelected.options[citySelected.selectedIndex].text;
+
+            var bSelect = document.getElementById("uBarangay")
+            var len = bSelect.options.length;
+            while (bSelect.options.length > 0) {
+                bSelect.remove(0);
+            }
+            console.log(citySelectedText)
+            var newOption;
+            for (var i = 1; i < 11; i++) {
+                newOption = document.createElement("option");
+                newOption.value = "Barangay " + i + " of " + citySelectedText;
+                newOption.text = "Barangay " + i + " of " + citySelectedText;
+                console.log(newOption.text)
+                try {
+                    bSelect.add(newOption);
+                }
+                catch (e) {
+                    bSelect.appendChild(newOption);
+                }
+            }
+        }
+
+        function yesnoCheck() {
+            if (document.getElementById('5y').checked) {
+                document.getElementById('ifYes').style.visibility = 'visible';
+            }
+            else document.getElementById('ifYes').style.visibility = 'hidden';
+
+        }
+
+      
+
+    </script>
+</head>
+
+<body>
+
+    <form action="healthdec.html">
+        <div class="border">
+            <h1>
+                <center>Get Pass Form</center>
+            </h1>
+            <section class="getPass">
+                <!-- REQUIRED FIELDS -->
+
+                <div>
+                    <label class="toTop" for="fName">First Name:</label>
+                    <input type="text" id="fName" name="fName" placeholder="Juan" required>
+                </div>
+                <!--<br style="clear:both;">-->
+                <br>
+                <div>
+                    <label class="toTop" for="mName">Middle Name:</label>
+                    <input type="text" id="mName" name="mName" placeholder="Miguel" required>
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="lName">Last Name:</label>
+                    <input type="text" id="lName" name="lName" placeholder="dela Cruz" required>
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uName">Preferred Username:</label>
+                    <input type="text" id="uName" name="uName" placeholder="JDCruz" maxlength="12" required>
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uAddress">Address:</label>
+                    <input type="text" id="aAddress" name="aAddress" placeholder="#30 Bagumbayan, Maynila, Pilipinas"
+                        required>
+                </div>
+                <br>
+               
+                <div>
+                    <label class="toTop" for="uRegion">Region:</label>
+                    <select name="uRegion" id="uRegion" onchange="regionSelect(this);">
+                        <option value="empty">Select region..</option>
+                        <option value="NCR">NCR</option>
+                        <option value="Region I">Region I</option>
+                        <option value="Region II">Region II</option>
+                        <option value="Region III">Region III</option>
+                        <option value="Region IV-A">Region IV-A</option>
+                        <option value="Region IV-B">Region IV-B</option>
+                        <option value="Region V">Region V</option>
+                        <option value="Region VI">Region VI</option>
+                        <option value="Region VII">Region VII</option>
+                        <option value="Region VIII">Region VIII</option>
+                        <option value="Region IX">Region IX</option>
+                        <option value="Region X">Region X</option>
+                        <option value="Region XI">Region XI</option>
+                        <option value="Region XII">Region XII</option>
+                        <option value="Region XIII">Region XIII</option>
+                        <option value="CAR">CAR</option>
+                        <option value="BARMM">BARMM</option>
+                    </select>
+                </div>
+                <br><br><br><br>
+                <!-- Dynamic Option Field -->
+                <div>
+                    <label class="toTop" for="uProvince">Province:</label>
+                    <select name="uProvince" id="uProvince" onchange="provinceSelect(this);">
+                        <option value="0">Select province..</option>
+                    </select>
+                </div>
+                <br><br><br><br>
+                <!-- Auto-generated Option -->
+                <div>
+                    <label class="toTop" for="uCity">City:</label>
+                    <select name="uCity" id="uCity" onchange="citySelect(this);">
+                        <option value="empty">Select city..</option>
+                    </select>
+                </div>
+                <br><br><br><br>
+                <!-- Auto-generated Option -->
+                <div>
+                    <label class="toTop" for="uBarangay">Barangay:</label>
+                    <select name="uBarangay" id="uBarangay">
+                        <option value="empty">Select barangay...</option>
+                    </select>
+                </div>
+                <br><br><br><br>
+                <div>
+                    <label class="toTop" for="uPostal">Postal Code:</label>
+                    <input type="text" pattern="\d*" id="uPostal" name="uPostal" placeholder="1000" maxlength="4"
+                        required>
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uContactNumber">Contact Number:</label>
+                    <input type="tel" id="uContactNumber" name="uContactNumber" placeholder="(123) 456-7890" required>
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uEmail">Email:</label>
+                    <input type="email" id="uEmail" name="uEmail" placeholder="jdcruz@email.com" required>
+                </div>
+                <br>
+
+                <!-- NON-REQUIRED FIELDS -->
+                <div>
+                    <label for="uGender">Gender: </label>
+                    <div>
+                        <input type="radio" id="genderMale" name="uGender" value="male">
+                        <label for="genderMale">Male</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="genderFemale" name="uGender" value="female">
+                        <label for="genderFemale">Female</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="genderOthers" name="uGender" value="others">
+                        <label for="genderOthers">Others</label>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <label class="toTop" for="uBirthDate">Date of Birth:</label>
+                    <input type="date" id="uBirthDate" name="uBirthDate">
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uBirthPlace">Place of Birth:</label>
+                    <input type="text" id="uBirthPlace" name="uBirthPlace" placeholder="Calamba, Laguna, Philippines">
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uNationality">Nationality:</label>
+                    <input type="text" id="uNationality" name="uNationality" placeholder="Filipino">
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uCivilStatus">Civil Status:</label>
+                    <select name="uCivilStatus" id="uCivilStatus">
+                        <option value="M">Married</option>
+                        <option value="S">Single</option>
+                        <option value="D">Divorced</option>
+                        <option value="W">Widowed</option>
+                    </select>
+                </div>
+                <br><br><br>
+                <div>
+                    <label class="toTop" for="uMMaidenName">Mother's Maiden Name:</label>
+                    <input type="text" id="uMMaidenName" name="uMMaidenName" placeholder="Hatdog">
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uEmploymentStatus">Employment Status:</label>
+                    <select name="uEmploymentStatus" id="uEmploymentStatus">
+                        <option value="1">Employed</option>
+                        <option value="2">Consultant</option>
+                        <option value="3">Self-employed (with own business)</option>
+                        <option value="4">Self-employed (online/freelance)</option>
+                    </select>
+                </div>
+                <br><br><br>
+                <div>
+                    <label class="toTop" for="uEmployer">Company/Employer:</label>
+                    <input type="text" id="uEmployer" name="uEmployer" placeholder="Krusty Crab">
+                </div>
+                <br>
+                <div>
+                    <label class="toTop" for="uFunds">Source of Funds:</label>
+                    <select name="uFunds" id="uFunds">
+                        <option value="1">Allowance</option>
+                        <option value="2">Business Profit</option>
+                        <option value="3">Commissions</option>
+                        <option value="4">Inheritance</option>
+                        <option value="5">Loan</option>
+                    </select>
+                </div>
+                <br><br><br><br>
+                <input type="submit"><input type="reset">
+                
+                <br><br>
+            </section>
+        </div>
+
+    </form>
+    <br>
+    
+
+</body>
+
+</html>

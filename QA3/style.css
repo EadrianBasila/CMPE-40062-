@@ -1,0 +1,109 @@
+form section.getPass {
+    justify-content: center;
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: rgb(232, 232, 232);
+}
+
+form section.healthDec {
+    justify-content: center;
+
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: rgb(232, 232, 232);
+}
+
+
+body {
+    background: fixed;
+    background-color: rgb(226, 226, 226);
+    padding: 1rem;
+    margin: auto;
+    width: 65%;
+}
+
+.border {
+    width: 70%;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+
+    border-radius: 2rem;
+}
+
+.toTop {
+    display: block;
+}
+
+label,
+li {
+    font-family: sans-serif;
+    padding-bottom: 5px;
+    font-size: large;
+}
+
+h1{
+    font-family: sans-serif;
+    color:rgba(187, 187, 187, 0.741);
+}
+
+i,p{
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 15px;
+    resize: vertical;
+    border-radius: 15px;
+    border-width: 0px;
+    border: none;
+
+}
+
+input[type=date],
+input[type=tel],
+select,
+textarea {
+    width: 100%;
+    padding: 15px;
+    resize: vertical;
+    border-radius: 15px;
+    border-width: 0px;
+    border: none;
+}
+
+input[type=reset],
+input[type=submit],
+select,
+textarea {
+    padding: 15px;
+    border-radius: 15px;
+    border-width: 1px;
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+
+    .col-25,
+    .col-75,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .col-25,
+    .col-75,
+    input[type=reset] {
+        width: 100%;
+        margin-top: 0;
+    }
+}

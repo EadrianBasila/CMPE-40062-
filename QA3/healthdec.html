@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title> Health Declaration Form</title>
+    <meta name="description" content="Get Pass Form Activity">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+
+
+        function yesnoCheck() {
+            if (document.getElementById('5y').checked) {
+                document.getElementById('ifYes').style.visibility = 'visible';
+            }
+            else document.getElementById('ifYes').style.visibility = 'hidden';
+
+        }
+      
+
+    </script>
+</head>
+
+<body>
+
+    <form action="onsubmit.html">
+        <div class="border">
+            <h1>
+                <center>Health Declaration Form</center>
+            </h1>
+            <section class="healthDec">
+                <form action="submit.html">
+                    <div>
+                        <div>
+                            <ol type="1">
+                                <li>Are you experiencing <i>(nakakaranas ka ba ng)</i>:
+                                    <br><br>
+                                    <ol type="a">
+                                        <li>Sore throat <i>(pananakit ng lalamunan)</i><br>
+                                            <input type="radio" id="1ay" name="1a" value="1">
+                                            <label for="1ay">Yes</label><br>
+                                            <input type="radio" id="1an" name="1a" value="0" checked>
+                                            <label for="1an">No</label><br>
+                                        </li>
+
+                                        <li>Body pains <i>(pananakit ng katawan)</i><br>
+                                            <input type="radio" id="1by" name="1b" value="1">
+                                            <label for="1by">Yes</label><br>
+                                            <input type="radio" id="1bn" name="1b" value="0" checked>
+                                            <label for="1bn">No</label><br>
+                                        </li>
+                                        <li>Headache <i>(sakit ng ulo)</i><br>
+                                            <input type="radio" id="1cy" name="1c" value="1">
+                                            <label for="1cy">Yes</label><br>
+                                            <input type="radio" id="1cn" name="1c" value="0" checked>
+                                            <label for="no1c">No</label><br>
+                                        </li>
+                                        <li>Fever the past few days <i>(lagnat sa nakalipas na araw)</i><br>
+                                            <input type="radio" id="1dy" name="1d" value="1">
+                                            <label for="1dy">Yes</label><br>
+                                            <input type="radio" id="1dn" name="1d" value="0" checked>
+                                            <label for="1dn">No</label><br>
+                                        </li>
+                                        <li>Cough or colds <i>(ubo o sipon)</i><br>
+                                            <input type="radio" id="1ey" name="1e" value="1">
+                                            <label for="1ey">Yes</label><br>
+                                            <input type="radio" id="1en" name="1e" value="0" checked>
+                                            <label for="1en">No</label><br>
+                                        </li>
+                                        <li>Shortness of breath <i>(hinahabol ang paghinga)</i><br>
+                                            <input type="radio" id="1fy" name="1f" value="1">
+                                            <label for="1fy">Yes</label><br>
+                                            <input type="radio" id="1fn" name="1f" value="0" checked>
+                                            <label for="1fn">No</label><br>
+                                        </li>
+                                        <li>Diarrhea <i>(pagtatae)</i><br>
+                                            <input type="radio" id="1gy" name="1g" value="1">
+                                            <label for="1gy">Yes</label><br>
+                                            <input type="radio" id="1gn" name="1g" value="0" checked>
+                                            <label for="1gn">No</label><br>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <br>
+                                <li>Have you worked together or stayed in the same close environment of a confirmed
+                                    COVID-19 case? <i>(May nakasama ka ba o nakatrabahong tao na kumpirmadong may COVID-19
+                                    o coronavirus?)</i><br>
+                                    <input type="radio" id="2y" name="2" value="1">
+                                    <label for="2y">Yes</label>
+                                    <input type="radio" id="2n" name="2" value="0" checked>
+                                    <label for="2n">No</label><br>
+                                </li>
+                                <br>
+                                <li>Have you had any contact with anyone with fever, cough, colds, and sore throat the
+                                    past 2 weeks? <i>(Mayroon ka bang nakasama na may lagnat, ubo, sipon o sakit ng
+                                    lalamunan sa nakalipas na 2 linggo?)</i><br>
+                                    <input type="radio" id="3y" name="3" value="1">
+                                    <label for="3y">Yes</label>
+                                    <input type="radio" id="3n" name="3" value="0" checked>
+                                    <label for="3n">No</label><br>
+                                </li>
+                                <br>
+                                <li>Have you travelled outside the Philippines in the last 14 days? <i>(Ikaw ba ay
+                                    nagbiyahe sa labas ng Pilipinas sa nakalipas na 14 na araw?)</i><br>
+                                    <input type="radio" id="4y" name="4" value="1">
+                                    <label for="4y">Yes</label>
+                                    <input type="radio" id="4n" name="4" value="0" checked>
+                                    <label for="4n">No</label><br>
+                                </li>
+                                <br>
+                                <li>Have you travelled to any areas in NCR aside from your home? <i>(Ikaw ba ay nagpunta sa
+                                    ibang parte ng NCR o Metro Manila bukod sa iyong bahay?)</i> Specify where if your
+                                    answer is yes. <i>(Sabihin kung saan kung ang sagot mo ay oo.)</i><br>
+                                    <input type="radio" id="5y" name="5" value="1" onclick="yesnoCheck();">
+                                    <label for="5y">Yes</label>
+                                    <input type="radio" id="5n" name="5" value="0" onclick="yesnoCheck();"checked>
+                                    <label for="5n">No</label><br>
+                                    <div id="ifYes" style="visibility:hidden">
+                                        <br>
+                                        <label for="5Specify">Where<i> (Saan)</i>: </label>
+                                        <input type="text" id="5Specify" name="5Specify" placeholder="Please Specify." >                          
+                                    </div>
+                                </li>
+                                <br>
+                                <li>I am a PWD<br>
+                                    <input type="radio" id="6y" name="6" value="1">
+                                    <label for="6y">Yes</label>
+                                    <input type="radio" id="6n" name="6" value="0" checked>
+                                    <label for="6n">No</label><br>
+                                </li>
+                                <br>
+                                <li>I am pregnant<br>
+                                    <input type="radio" id="7y" name="7" value="1">
+                                    <label for="7y">Yes</label>
+                                    <input type="radio" id="7n" name="7" value="0" checked>
+                                    <label for="7n">No</label><br>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            <justify>
+                                I hereby authorize KDR Adventure camp to collect and process the data indicated insurvey for the purpose of effecting control of the COVID-19 infection. I understand that my personal information is protected by RA 10173, Data Privacy Act of 2012, that I am required by RA 11469, Bayanihan to Heal As One Act, to provide truthful information and that this health declaration is in accordance with memoranda issued by various government institutions, including the Joint Memorandum Circular No. 20-04-A Series 2020 by the Department of Trade and Industry and the Department of Labor and Employment, Memorandum Circular No. 2020-004 by the Department of Tourism, and Memorandum Circular No 2020-077 by the Department of Interior and Local Government.
+                            </justify>
+                        </p>
+                        <input type="checkbox" id="agree" name="agree" value="agree" required>
+                        <label for="agree">I agree to the terms and condition</label><br>
+                    </div>
+
+                </form>
+                <input type="submit"><input type="reset">
+                
+                <br>
+            </section>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
